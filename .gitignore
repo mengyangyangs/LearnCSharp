@@ -1,0 +1,93 @@
+# Visual Studio
+.vs/
+*.com
+*.exe
+*.dll
+*.pdb
+*.suo
+*.user
+*.config
+*.json
+*.log
+*.ncb
+*.opendb
+*.bak
+*.cache
+*.obj
+*.lib
+*.sbr
+*.res
+*.pch
+*.ilk
+*.aps
+*.bsc
+*.map
+*.dep
+*.tlb
+*.tlh
+*.tli
+*.tmp
+*.vspscc
+*.vssscc
+*.vsscc
+*.build-log
+*.docstates
+*.mfcribbon-ms
+*.resharper
+*.dbmdl
+*.opensdf
+*.sdf
+*.ipch
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+[Tt]emp/
+[Tt]mp/
+[Ww]wwroot/
+[Oo]ut/
+
+# Packages
+*.nupkg
+packages/
+
+# Rider
+.idea/
+
+# macOS
+.DS_Store
+
+# Misc
+*.pid
+*.seed
+*.pid
+*.seed
+*.npmrc
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Unit Test Results
+TestResults/
+*.trx
+
+# Azure Functions
+AzureFunctions/bin/
+AzureFunctions/obj/
+
+# Visual Studio Code
+.vscode/
+
+# Compiled files
+*.dll
+*.exe
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+# End of .gitignore
