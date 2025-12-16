@@ -1,81 +1,67 @@
-# 📘 C# 学习项目合集
+# C# Learning Journey
 
-欢迎来到我的 C# 学习代码库！这里包含了 9 个不同主题的实战项目，记录了我从基础语法到面向对象编程（OOP），再到 Web API 开发的学习历程。每个项目都专注于特定的编程概念，通过实际的应用场景来巩固知识。
+这是一个 C# 学习项目的集合仓库，包含了从基础控制台应用到 Web API 的多个练习项目，涵盖了面向对象编程 (OOP)、接口、数据库交互等核心概念。
 
-## 📂 项目概览
+## 📂 项目目录结构
 
-### 1. 🧮 Calculator (计算器)
-**核心概念**: 基础 OOP、接口、文件 I/O
-- 实现了一个支持普通运算和科学运算（幂运算）的计算器。
-- 演示了如何通过 `ICalculator` 接口切换不同的硬件实现（如从“科学计算器”切换到“手机”）。
-- 包含历史记录保存功能，将计算结果写入 `txt` 文件。
+本仓库包含以下主要模块：
 
-### 2. 👥 HR_System (人力资源系统)
-**核心概念**: 抽象类、静态字段、类型转换
-- 模拟公司薪资核算流程。
-- 使用 `Employee` 抽象类定义通用员工属性，子类（Developer, Sales, Manager）各自实现薪资算法。
-- 通过 `IWorkReport` 接口强制特定岗位（如 Manager）提交日报。
+### 1. 基础与工具类
+- **Calculator/**: 一个控制台计算器应用。
+  - 包含基础运算与科学计算功能 (`ScientificCalculator.cs`)。
+  - 实现了计算历史记录功能 (`calc_history.txt`)。
+- **Product/**: 自动售货机模拟系统 (`VendingMachine.cs`)，用于练习状态管理和逻辑判断。
 
-### 3. 🏦 IBankProject (银行账户系统)
-**核心概念**: 接口契约、异常处理、流水记录
-- 定义 `IBankAccount` 接口规范存款和取款行为。
-- `NormalAccount` 和 `VIPAccount` 实现了不同的业务逻辑（如 VIP 存款有返利）。
-- 包含完整的交易日志记录和异常捕获（Try-Catch）。
+### 2. 面向对象编程 (OOP) 实践
+- **HR_System/**: 人力资源管理系统。
+  - 演示了继承与多态：`Employee` (基类) 派生出 `Manager`, `Developer`, `Sales`, `TempStaff`。
+  - 包含接口实现 `IWorkReport`。
+- **Library_System/**: 图书馆资产管理系统。
+  - 涉及数字资产 (`IDigital`) 与可借阅资产 (`ILeasable`) 的接口设计。
+  - 管理图书、电子书、有声读物等多种资源。
+- **SmartHome/**: 智能家居模拟。
+  - 通过 `ISwitchable` 接口统一管理设备（空调、智能灯、烟雾传感器等）。
+- **Translator/**: 交通工具模拟系统。
+  - 包含 `Drone` (无人机), `Truck` (卡车) 等，实现了 `IMaintainable` 接口。
 
-### 4. 📚 Library_System (图书管理系统)
-**核心概念**: 继承链、接口多态、查找算法
-- 管理不同类型的图书馆资产：实体书、电子书、有声光盘。
-- 使用 `ILeasable` 接口区分“可借阅”和“不可借阅”的物品。
-- 实现了借阅、归还以及不同身份（学生/教授）的罚款计算逻辑。
+### 3. 游戏与模拟
+- **RAGgame/**: 一个基于文本的角色扮演游戏 (RPG) 雏形。
+  - 包含角色系统：`Hero` (英雄), `Warrior`, `Archer`, `Mages`。
+  - 包含怪物系统：`Goblin` 等，实现了 `IMoster` 接口。
 
-### 5. 🌐 MyFristApi (我的第一个 Web API)
-**核心概念**: ASP.NET Core、RESTful API、Controller
-- 将银行系统的逻辑迁移到了 Web 服务端。
-- 实现了 `BankController`，提供开户、查询、存取款的 HTTP 接口。
-- 学习了 `[HttpGet]`, `[HttpPost]` 等路由属性的使用。
+### 4. 银行与金融系统
+- **IBankProject/**: 银行账户管理系统的基础实现。
+  - 区分 `NormalAccount` 和 `VIPAccount`。
+  - 演示了接口 `IBankAccount` 的使用。
 
-### 6. 🥤 Product / VendingMachine (自动售货机)
-**核心概念**: 封装、状态管理
-- 模拟售货机的投币、选品、出货流程。
-- 强调数据的安全性，库存和余额通过 `private` 保护，只能通过特定方法修改。
-- 包含严谨的逻辑判断（检查余额、检查库存）。
+### 5. Web API 开发
+- **MyFristApi/**: 一个完整的 ASP.NET Core Web API 项目。
+  - **技术栈**: Entity Framework Core, SQLite (`bank.db`).
+  - **功能**: 
+    - 银行账户管理 (`BankController`)。
+    - 信用卡管理 (`CreditCardController`)。
+    - 数据库迁移记录 (`Migrations/`)。
+    - 包含 HTTP 测试文件 (`MyFristApi.http`)。
 
-### 7. ⚔️ RAGgame (RPG 战斗模拟)
-**核心概念**: 抽象类、游戏循环、对象交互
-- 一个简单的回合制战斗游戏。
-- `Hero` 抽象类派生出战士、法师、弓箭手，各自拥有不同的攻击特效。
-- 演示了对象之间的交互（英雄打怪、怪物反击）。
+## 📚 文档资源
 
-### 8. 🏠 SmartHome (智能家居)
-**核心概念**: 接口与抽象类的组合、类型判断 (`is`)
-- 管理家中的智能设备（灯、空调、报警器）。
-- 使用 `ISwitchable` 接口统一管理可开关的设备。
-- 演示了如何在集合循环中处理特殊设备（如报警器不可关闭）。
-
-### 9. 🚚 Translator / LogisticsSystem (物流调度)
-**核心概念**: 抽象方法、受保护的属性 (`protected`)
-- 模拟物流车队（卡车、无人机）的运输任务。
-- `Vehicle` 基类定义了运输标准，子类实现具体的成本计算。
-- 引入 `IMaintainable` 接口处理车辆保养逻辑。
-
----
+- `project.md`: 原项目说明文件。
+- `新项目开发指南.md`: 开发规范与向导。
+- `base-knowlegde.md`: C# 基础知识笔记。
+- `rule.md`: 项目规则说明。
+- `project_summary.md`: 项目总结。
 
 ## 🚀 如何运行
 
-每个项目都是独立的 .NET Console Application (MyFristApi 除外)。
-你可以进入对应目录，使用以下命令运行：
+大部分子文件夹为独立的控制台项目或 Web API 项目。
+请进入相应目录并使用 dotnet CLI 运行：
 
 ```bash
+# 运行控制台程序 (例如 Calculator)
 cd Calculator
 dotnet run
-```
 
-对于 Web API 项目：
-```bash
+# 运行 Web API
 cd MyFristApi
 dotnet run
-# 然后在浏览器访问显示的 localhost 地址/swagger 查看接口文档
 ```
-
-## 📝 学习心得
-详细的语法总结和知识点笔记请查看同目录下的 [rule.md](./rule.md)。
